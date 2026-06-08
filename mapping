@@ -1,0 +1,22 @@
+Hibernate mapping is one of the key features of Hibernate.
+By using mapping, we can establish connection between two or more tables.
+We can establish either unidirectional or bidirectional relationship.
+
+Relationships can be established between entities as:
+One to One
+One to Many
+Many to One
+Many to Many
+
+Uni-directional mapping
+ 
+If the relationship is defined inside any one of the entities, then it is called Uni-directional mapping.
+Only one entity knows about the relationship, the other entity has no reference back.
+The mapping exists in one direction only.
+ 
+Bi-directional mapping
+ 
+If the relationship is defined inside both the entities, then it is called as Bi-directional mapping.
+Both entities know about each other.
+The mapping/relationship exists in both directions.
+
