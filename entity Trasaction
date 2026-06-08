@@ -1,0 +1,46 @@
+EntityManager
+--------------------
+
+EntityManager is an interface present in the javax.persistence package.
+It provides many methods; using them we can perform CRUD operations on the database tables.
+By using the createEntityManager method of the EntityManagerFactory interface, we can create the instance of EntityManager.
+We can create multiple EntityManager instances by using the same EntityManagerFactory instance to perform actions on a particular database.
+
+
+EntityTransaction
+-------------------
+
+A transaction is a set of operations that either fail or succeed as a unit.
+A database transaction consists of a set of SQL DML operations that are committed or rolled back as a single unit.
+An object-level transaction is one in which a set of changes made to a set of objects are committed to the database as a single unit.
+EntityTransaction interface provides important methods to handle transactions in JPA-based applications.
+
+
+What is generation types
+@Id
+@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "stu_gen_seq")
+@SequenceGenerator(name = "stu_gen_seq",  sequenceName = "student_seq",   allocationSize = 1)
+private Long id;
+
+Why?
+Best performance
+Supports batching
+PostgreSQL’s native design
+Most scalable
+
+
+IDENTITY
+→ PostgreSQL generates ID automatically
+→ Simple but slower
+→ No batching
+→ Good for small apps
+ AUTO
+→ Hibernate chooses SEQUENCE in PostgreSQL
+→ Better performance
+→ Safe default
+SEQUENCE
+→ You fully control the sequence
+→ Best performance
+→ Preferred for PostgreSQL
+→ Good for enterprise apps
+
