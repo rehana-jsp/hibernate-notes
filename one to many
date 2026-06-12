@@ -1,0 +1,54 @@
+//leave space for diagram
+One to Many Unidirectional Mapping :
+If a record from Table 1 belongs to multiple records from Table 2, and the relationship is maintained only from one side, then it is called one-to-many unidirectional mapping.
+IN OneToMany Three  tables will be created .
+Example:
+One Bank to Many Accounts entity mapping (One Bank has many Accounts)
+A single Bank can have multiple Accounts.
+Each Account belongs to exactly one Bank.
+Tables created 
+Bank entity --- bank table
+Account entity --- account table
+Relation    - bank_account
+
+CASCADING
+
+It is a way using which we can strictly bound dependency entity objects to dependent entity i.e operation done on dependent entity will also get reflected on dependency entity.
+The standard cascade types (JPA)
+CascadeType is an enum.
+ CascadeType.ALL = (PERSIST, MERGE, REMOVE, REFRESH, DETACH).
+PERSIST: 
+ em.persist(parent) also persist children.
+Use when child should be automatically created when parent is created.
+MERGE: 
+em.merge(parent) also merge(update) children.
+REMOVE: 
+em.remove(parent) also remove children (delete from DB).
+ALL — all of the above.
+
+ManyToOne Mapping
+------------------
+Leave space for diagram
+
+ 
+If more than one records from table 1 belong to only one record from table 2 then it is called as many to one unidirectional  mapping.
+Two tables will be created for 2 entity classes(product_id column will be added extra to Order table)
+Examples:
+ 
+Many Reviews belongs to One Product 
+Many Products belongs to One Order
+
+
+ManyToMany Mapping
+-------------------
+leave space for diagram
+
+If more than one records from table 1 belong to multiple records from table 2 then it is called as many to many mapping.
+Three tables (one showing the related data(primary key relations)(junction table) will be created for 2 entity classes.
+Examples:
+ 
+Many Subjects belongs to Many Students
+Many Users can have many mutual followers
+
+
+
